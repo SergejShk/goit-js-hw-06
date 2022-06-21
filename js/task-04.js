@@ -4,13 +4,16 @@ const refs = {
   countValueRef: document.querySelector("#value"),
 };
 const { decrementRef, incrementRef, countValueRef } = refs;
+let counterValue = 0;
 
 const onDecrementCountValue = () => {
-  countValueRef.textContent = Number(countValueRef.textContent) - 1;
+  counterValue -= 1;
+  countValueRef.textContent = counterValue;
 };
 
 const onIncrementCountValue = () => {
-  countValueRef.textContent = Number(countValueRef.textContent) + 1;
+  counterValue += 1;
+  countValueRef.textContent = counterValue;
 };
 
 decrementRef.addEventListener("click", onDecrementCountValue);
